@@ -1,0 +1,67 @@
+body{
+background-color: beige;
+text-align: center;
+}
+.grid-container{
+    display: grid;
+    column-gap: 50px;
+    row-gap: 50px;
+     grid-template-columns: 200px 300px auto 200px; 
+    grid-template-rows: 200px 200px 200px;
+    transition: width 2s,height 3s, line-height 3s;
+    
+}
+.grid-item{
+    border: 2px solid brown;
+    text-align: center;
+    line-height: 200px;
+    background-color: rgb(204, 136, 136);
+    animation: example;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+   
+}
+.grid-container:hover{
+    width:250px;
+    height:100px;
+    line-height: 100px;
+}
+@keyframes example {
+    0%{background-color: brown;}
+    25%{background-color: rgb(83, 213, 118);}
+    50%{background-color: yellow;}
+    100%{background-color: rgb(177, 171, 232);}
+}
+/* div{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(204, 136, 136);
+    animation: example;
+    animation-duration: 5s;
+} */
+.grid-container2{
+    display: grid;
+    row-gap: 50px;
+     grid-template-columns: 750px 500px ; 
+    grid-template-rows: 300px ;
+  height: 100vh;
+  width: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.grid-item1{
+    border: 1px solid none;
+    text-align: center;
+    line-height: 200px;
+    background-color: rgb(89, 219, 219);
+
+}
+.grid-item2{
+    border: 1px solid none;
+    text-align: center;
+    line-height: 200px;
+    background-color: rgb(226, 141, 22);
+
+}

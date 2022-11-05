@@ -3,5 +3,87 @@
     <body>
         <center><h1 style="color:Green ;">Start Booking</h1></center>
         <h5><a style="background-color: black;width:50%;color: #f1e6e3; " href="index.html">Back to home</a></h5>
+        <video width="350" height="240" loop controls autoplay muted>
+            <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h265/1080/Big_Buck_Bunny_1080_10s_1MB.mp4" type="video/mp4">
+        </video>
+       
+        <form action="print.html" method="GET" style="width: 600px;padding-left:50px;;margin-left: 405px;margin-right: 505px;">
+        <table cellspacing="6" cellpadding="5">
+            <tr>
+                <td> <label for="Name prefix">Name Prefix</label></td>
+                <td>
+                    <select  id="namePrefix" name="namePrefix" style="width: 170px;">
+                        <option value="Mr">Mr.</option>
+                        <option value="Ms">Ms.</option>
+                        <option value="Mrs">Mrs.</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+      <td> <label for="firstName">First Name</label></td> 
+       <td> <input type="text" id="firstName" name="firstName" placeholder="Enter First Name"/></td><br>
+    </tr>
+    <tr>
+        <td><label for="lastName">Last Name</label></td>
+       <td> <input type="text" id="lastName" name="lastName" placeholder="Enter last Name"/></td><br>
+    </tr>
+    <tr>
+        <td><label for="address">Address</label></td>
+       <td> <textarea id="address" name="address" placeholder="Enter Address" rows="6"></textarea></td><br>
+    </tr>
+    <tr>
+        <td><label for="dob">Date of Birth</label></td>
+       <td><input type="date" id ="dob" name="dob" placeholder="DOB"/></td><br>
+    </tr>
+    <tr>
+        <td><label for="mail">Email</label></td>
+       <td><input type="email" name="mail"/></td><br>
+    </tr>
+    <tr>
+        <td><label for="mobile">Mobile</label></td>
+       <td><input type="text" name="phone"/></td><br>
+    </tr>
+    <tr>
+        <td><label for="contact">Can we contact you?</label></td>
+       <td><input type="radio" name="contact"/>Yes
+        <input type="radio" name="contact"/>No</td><br>
+    </tr>
+    <tr>
+        <td><label for="Upload Photo">Upload Photo</label></td>
+        <td><input type="file" name="fileupload" accept="image/*"/></td>
+    </tr>
+    <tr>
+        <td><label for="communication">Communication Preferrence</label></td>
+       <td><input type="checkbox" name="checkemail" value="Email"/>Email
+        <input type="checkbox" name="checksms"  value="SMS"/>SMS</td><br>
+    </tr>
+    <tr>
+       
+       <td colspan="2"><input type="checkbox" name="checkemail"/>I agree to the terms and conditions of the website</td>
+      <br>
+    </tr>
+    <tr>
+      <center><td colspan="2"><input type="reset" name="reset" value="Reset" style="width: 130px;height: 30px;color:white;border:none;border-radius: 6px;background-color: rgb(122, 210, 122);"/>
+      <input type="submit" name="submit" value="Submit" onclick="saveData();" style="width: 130px;height: 30px;color:white;border:none;border-radius: 6px;background-color: rgb(122, 210, 122);"/></td><br>
+    </center> </tr>
+    </table>
+</form>
+<script>
+    function saveData(){
+        debugger
+        var firstName =document.getElementById('firstName').value;
+        var lastName=document.getElementById('lastName').value;
+        var address=document.getElementById('address').value;
+        //console.log(firstName);
+        // alert("1234");
+        // //var formData ={
+        // firstName,
+        // lastName,
+        // address
+    
+      //  }
+        localStorage.setItem('firstName',firstName);
+    }
+</script>
     </body>
 </html>

@@ -1,0 +1,44 @@
+create database FBMS;
+use FBMS;
+CREATE TABLE flight(
+flight_no int PRIMARY KEY ,
+flight_name varchar(50) NOT NULL,
+flight_desc varchar(50),
+capacity int);
+
+CREATE TABLE passenger(
+id int PRIMARY KEY ,
+name varchar(50) NOT NULL,
+username varchar(50),
+email varchar(50),
+password varchar(50),
+mobile varchar(50) NOT NULL,
+address varchar(150),
+dob date);
+
+drop table flight_schedule;
+create table flight_schedule(
+id int PRIMARY KEY ,
+flight_from varchar(50),
+flight_to varchar(50),
+flight_date date,
+flight_time time,
+cost int,
+flight_number int,
+constraint FK_flight_flightno foreign key(flight_number) references flight(flight_no) 
+ );
+ 
+ create table booked_ticket(
+ticket_number  int PRIMARY KEY ,
+flight_from varchar(50),
+flight_to varchar(50),
+booking_date date,
+travel_date date,
+flight_time time,
+boarding_time time,
+flight_seat varchar(50),
+passenger_id int,
+flight_number int,
+constraint FK_booking_passengerid foreign key(passenger_id) references passenger(id),
+constraint FK_booking_flightno foreign key(flight_number) references flight(flight_no)  
+ );
